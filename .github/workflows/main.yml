@@ -1,0 +1,20 @@
+name: Use Private Action from Another Repo
+
+on: [push]
+
+jobs:
+  run-private-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout REPO0
+        uses: actions/checkout@v4
+
+      - name: Checkout REPO1 (Actiunea Privata)
+        uses: actions/checkout@v4
+        with:
+          repository: 'andreeanatalia/04_practice_project_problem'
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          path: '.github/actions/my-private-action'
+
+      - name: Execute Private Action from repository 04_practice_project_problem
+        uses: ./.github/actions/my-private-action
