@@ -6,10 +6,19 @@ jobs:
   run-private-action:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout REPO0
+      - name: Checkout current repository
         uses: actions/checkout@v4
 
-      - name: Checkout REPO1 (Actiunea Privata)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm ci 
+      - name: Run tests
+        run: npm test
+
+      - name: Checkout private action from another repository
         uses: actions/checkout@v4
         with:
           repository: 'andreeanatalia/04_practice_project_problem'
