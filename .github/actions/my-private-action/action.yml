@@ -2,4 +2,4 @@ name: 'My Private Action'
 description: 'A private action for the React demo'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'index.cjs'
