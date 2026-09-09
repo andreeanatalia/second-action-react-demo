@@ -1,4 +1,5 @@
-const core = require('@actions/core');
+import * as core from '@actions/core';
+import * as github from '@actions/github';
 
 try {
   core.info('My private action is running!');
