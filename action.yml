@@ -1,0 +1,11 @@
+name: 'My Private Action'
+description: 'A private custom action'
+author: 'andreeanatalia'
+
+runs:
+  using: 'node24'
+  main: 'index.js'
+
+branding:
+  icon: 'package'
+  color: 'blue'
