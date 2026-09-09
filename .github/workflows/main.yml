@@ -1,6 +1,6 @@
 name: Use Private Action from Another Repo
 
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   run-private-action:
